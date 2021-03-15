@@ -2,9 +2,13 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server/server.bundle.js",
+    "build": "webpack --config webpack.client.config.js && webpack --config webpack.server.config.js",
+    "server": " webpack --config webpack.server.config.js --watch",
+    "client": "webpack --config webpack.client.config.js --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/jrholden/phazer-fun/issues"
   },
-  "homepage": "https://github.com/jrholden/phazer-fun#readme"
+  "homepage": "https://github.com/jrholden/phazer-fun#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "devDependencies": {
+    "css-loader": "^5.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "nodemon-webpack-plugin": "^4.4.4",
+    "style-loader": "^2.0.0",
+    "webpack-cli": "^4.5.0"
+  }
 }
